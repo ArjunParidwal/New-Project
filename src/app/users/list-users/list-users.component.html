@@ -1,6 +1,8 @@
-<p>list-users works!</p>
-<ul>
-    <li *ngFor="let User of listUsers">
-        {{ user.name }}
-    </li>
-</ul>
+<h1 *ngIf="listUsers">Display {{ listUsers.length }} users</h1>
+<div class="main-content">
+<mat-list role="list">
+    <mat-card class="listusers" role="listitem" *ngFor="let user of listUsers">
+    <span class="username">{{user.name}}</span> | <a class="action-link" [routerLink]="['/users/view',user.id]">view</a> | <a class="action-link" [routerLink]="['/users/edit',user.id]">edit</a> | <a class="action-link" [routerLink]="['/users/delete',user.id]">Delete</a> 
+    </mat-card>
+  </mat-list>
+</div> 

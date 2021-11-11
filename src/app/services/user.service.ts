@@ -12,4 +12,9 @@ export class UserService {
   listUsers(){
     return this.http.get(this.baseUrl + 'users');
   }
+
+  viewuser(id: string){
+  return this.http.get(this.baseUrl + 'users/' + id );
+  }
+
 }
